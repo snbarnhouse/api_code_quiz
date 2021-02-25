@@ -1,0 +1,16 @@
+div#test{
+    border: purple 3px solid;
+    padding:10px 40px 40px 40px;
+    background-color:#E5FCE3;
+    width:50%;
+    margin: auto;
+}
+
+
+
+
+@media screen and (max-width: 838px) {
+    .topnav, .aboutme, .contactme, .resume, .work {
+      flex-direction: column;
+    }
+  }
