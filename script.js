@@ -109,5 +109,10 @@ function getAnswer() {
   getQuestion();
 }
 window.addEventListener("load", getQuestion);
+var seconds = 100, $seconds = document.querySelector('#clock');
+(function clock() {
+    $seconds.textContent = seconds + ' second' + (seconds == 1 ?  '' :  's')
+    if(seconds --> 0) setTimeout(clock, 1000)
+})();
 
 

@@ -5,9 +5,19 @@ div#test{
     width:50%;
     margin: auto;
 }
-div#clock{
+span#clock{
+    position: relative;
+    display: block; 
+    width: 100%;
+    /* display: flex; 
+    justify-content: center  */
+    /* width: 100;
+    text-align: center; */
+    
+    /* display: inline-block;
     text-align: center;
-    padding: 10px 40px 40px 40px;
+    padding: 10px 40px 40px 40px; */
+    
 }
 
 
