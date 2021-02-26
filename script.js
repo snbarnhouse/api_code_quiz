@@ -16,10 +16,10 @@ var questions = [
     },
     {
         question: "Inside which HTML element is the JavaScript put?",
-        A: "<head>",
-        B: "<title>",
-        C: "<script>",
-        D: "<style>",
+        A: "head",
+        B: "title",
+        C: "script",
+        D: "style",
         Answer: "C",
     },
     {
@@ -27,7 +27,7 @@ var questions = [
         A: "Markup",
         B: "Scripting",
         C: "Programming",
-        D: "All of the above.",
+        D: "None of the above.",
         Answer: "B",
     },
     {
@@ -55,9 +55,11 @@ var questions = [
         Answer: "C",
     },
     {
-        question: "True of false, null is an object.",
-        A: "True",
-        B: "False",
+        question: "The _____ method of an array object adds and/or removes elements from an array.",
+        A: "splice",
+        B: "shift",
+        C: "reverse",
+        D: "slice",
         Answer: "A",
     }
 ];
@@ -87,9 +89,9 @@ function getQuestion () {
     test.innerHTML = "<h3>" + question + "</h3>";
     test.innerHTML += "<label> <input type='radio' name='choices' value='A'> "+choiceA+"</label><br>";
     test.innerHTML += "<label> <input type='radio' name='choices' value='B'> "+choiceB+"</label><br>";
-    test.innerHTML += "<label> <input type='radio' name='choices' value='C'> "+choiceC+"</label><br><br>";
-    test.innerHTML += "<label> <input type='radio' name='choices' value='C'> "+choiceD+"</label><br><br>";
-    test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+    test.innerHTML += "<label> <input type='radio' name='choices' value='C'> "+choiceC+"</label><br>";
+    test.innerHTML += "<label> <input type='radio' name='choices' value='D'> "+choiceD+"</label><br><br>";
+    test.innerHTML += "<button onclick='getAnswer()'>Submit Answer</button>";
 }
 //function to get correct answer
 function getAnswer() {
@@ -99,7 +101,7 @@ function getAnswer() {
       choice = choices[i].value;
     }
   }
-  if(choice == questions[questionNumber].answer){
+  if(choice == questions[questionNumber].Answer){
     correct++;
   }
   questionNumber++;

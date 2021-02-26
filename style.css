@@ -8,7 +8,6 @@ div#test{
 
 
 
-
 @media screen and (max-width: 838px) {
     .topnav, .aboutme, .contactme, .resume, .work {
       flex-direction: column;
