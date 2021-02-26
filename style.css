@@ -5,6 +5,10 @@ div#test{
     width:50%;
     margin: auto;
 }
+div#clock{
+    text-align: center;
+    padding: 10px 40px 40px 40px;
+}
 
 
 
