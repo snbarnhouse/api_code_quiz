@@ -113,6 +113,13 @@ var seconds = 100, $seconds = document.querySelector('#clock');
 (function clock() {
     $seconds.textContent = seconds + ' second' + (seconds == 1 ?  '' :  's')
     if(seconds --> 0) setTimeout(clock, 1000)
+    // if (choice !== correct) {
+    //     seconds -= 10
+    // }; 
+    if ( seconds === 0) {
+        alert("You're out of time!");
+    }
 })();
+
 
 

@@ -6,9 +6,11 @@ div#test{
     margin: auto;
 }
 span#clock{
-    position: relative;
+    position: absolute;
     display: block; 
     width: 100%;
+    display: block;
+
     /* display: flex; 
     justify-content: center  */
     /* width: 100;
