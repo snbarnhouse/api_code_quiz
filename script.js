@@ -63,60 +63,64 @@ var questions = [
         Answer: "A",
     }
 ];
-var test, test_progress, choice, choices, choiceA, choiceB, chocieC, choiceD;
+var test, test_progress, choice, choiceA, choiceB, choiceC, choiceD;
 //function to get elements
 function get(x) {
     return document.getElementById(x);
 }
 //function to display question
-function getQuestion () {
-    test = get ("test");
+function getQuestion() {
+    test = get("test");
     if (questionNumber >= questions.length) {
         test.innerHTML = "<h2>You answered " + correct + " questions correct.</h2>";
-        get ("test_progress").innerHTML = "Quiz Completed"; 
+        get("test_progress").innerHTML = "Quiz Completed";
         questionNumber = 0;
         correct = 0;
         return false;
     }
-    get ("test_progress").innerHTML = "Question " + (questionNumber+1) + " of " + questions.length;
+    get("test_progress").innerHTML = "Question " + (questionNumber + 1) + " of " + questions.length;
 
     question = questions[questionNumber].question;
     choiceA = questions[questionNumber].A;
     choiceB = questions[questionNumber].B;
     choiceC = questions[questionNumber].C;
     choiceD = questions[questionNumber].D;
-//display question and answer options
+    //display question and answer options
     test.innerHTML = "<h3>" + question + "</h3>";
-    test.innerHTML += "<label> <input type='radio' name='choices' value='A'> "+choiceA+"</label><br>";
-    test.innerHTML += "<label> <input type='radio' name='choices' value='B'> "+choiceB+"</label><br>";
-    test.innerHTML += "<label> <input type='radio' name='choices' value='C'> "+choiceC+"</label><br>";
-    test.innerHTML += "<label> <input type='radio' name='choices' value='D'> "+choiceD+"</label><br><br>";
+    test.innerHTML += "<label> <input type='radio' name='choices' value='A'> " + choiceA + "</label><br>";
+    test.innerHTML += "<label> <input type='radio' name='choices' value='B'> " + choiceB + "</label><br>";
+    test.innerHTML += "<label> <input type='radio' name='choices' value='C'> " + choiceC + "</label><br>";
+    test.innerHTML += "<label> <input type='radio' name='choices' value='D'> " + choiceD + "</label><br><br>";
     test.innerHTML += "<button onclick='getAnswer()'>Submit Answer</button>";
 }
 //function to get correct answer
 function getAnswer() {
-    choices = document.getElementsByName("choices");
-  for(var i=0; i<choices.length; i++){
-    if(choices[i].checked){
-      choice = choices[i].value;
+    var choices = document.getElementsByName("choices");
+    console.log(choices)
+    for (var i = 0; i < choices.length; i++) {
+        if (choices[i].checked) {
+            choice = choices[i].value
+            if(choice === questions[questionNumber].Answer){
+                console.log(choice)
+                console.log("correct answer")
+              correct++;
+            } else {
+                //reduce time by 10 seconds
+                console.log("wrong!!")
+                seconds -= 10
+            }
+        }
     }
-  }
-  if(choice == questions[questionNumber].Answer){
-    correct++;
-  }
-  questionNumber++;
-  //on to next question
-  getQuestion();
+    questionNumber++;
+    //on to next question
+    getQuestion();
 }
 window.addEventListener("load", getQuestion);
 var seconds = 100, $seconds = document.querySelector('#clock');
 (function clock() {
-    $seconds.textContent = seconds + ' second' + (seconds == 1 ?  '' :  's')
-    if(seconds --> 0) setTimeout(clock, 1000)
-    // if (choice !== correct) {
-    //     seconds -= 10
-    // }; 
-    if ( seconds === 0) {
+    $seconds.textContent = seconds + ' second' + (seconds == 1 ? '' : 's')
+    if (seconds-- > 0) setTimeout(clock, 1000)
+    if (seconds === 0) {
         alert("You're out of time!");
     }
 })();
