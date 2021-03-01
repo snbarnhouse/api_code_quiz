@@ -4,6 +4,8 @@ Quiz made using HTML, CSS, and JavaScript. When the user answers questions incor
 
 https://snbarnhouse.github.io/api_code_quiz/ 
 
+![quiz](https://user-images.githubusercontent.com/77131387/109439222-74e74d80-79fb-11eb-96f2-3e741b5047f9.png)
+
 ## Your Task
 
 At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment—perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges.

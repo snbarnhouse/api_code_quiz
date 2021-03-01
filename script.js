@@ -103,15 +103,20 @@ function getAnswer() {
             if(choice === questions[questionNumber].Answer){
                 console.log(choice)
                 console.log("correct answer")
-              correct++;
+                correct++;
+                // if (choice !== null) {
+                //     alert ("You must choose an answer to continue!")
+                // }
             } else {
                 //reduce time by 10 seconds
                 console.log("wrong!!")
                 seconds -= 10
             }
+            
         }
     }
     questionNumber++;
+    
     //on to next question
     getQuestion();
 }
@@ -124,6 +129,3 @@ var seconds = 100, $seconds = document.querySelector('#clock');
         alert("You're out of time!");
     }
 })();
-
-
-
