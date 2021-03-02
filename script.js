@@ -107,7 +107,9 @@ function getAnswer() {
                 // if (choice !== null) {
                 //     alert ("You must choose an answer to continue!")
                 // }
-            } else {
+    
+            } 
+            else {
                 //reduce time by 10 seconds
                 console.log("wrong!!")
                 seconds -= 10
@@ -127,5 +129,19 @@ var seconds = 100, $seconds = document.querySelector('#clock');
     if (seconds-- > 0) setTimeout(clock, 1000)
     if (seconds === 0) {
         alert("You're out of time!");
+        //to clear clock
+    } else {
+        if (questionNumber == 7)
+            clearInterval(clock);
+
     }
 })();
+// var highscores = document.querySelector(#high_scores)
+// var name = document.querySelector(#name)
+
+// var highscores = document.querySelector("#high_score")
+ 
+// function saveHigh_score () {
+//     var name = name.El.value.trim();
+//     JSON.parse(window.localStorage.getItem("high_scores"))[];
+// }
